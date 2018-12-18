@@ -1,12 +1,39 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/movie/movie"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
+    "color":"#333",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "各类游戏",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color":"#888",
+    "selectedColor":"#09bb07",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/icons/tabbar/normal/yy.png",
+        "selectedIconPath": "/icons/tabbar/selected/yyAct.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "游戏",
+        "iconPath": "/icons/tabbar/normal/movie.png",
+        "selectedIconPath": "/icons/tabbar/selected/movieAct.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "查询",
+        "iconPath": "/icons/tabbar/normal/cx.png",
+        "selectedIconPath": "/icons/tabbar/selected/cxAct.png"
+      }
+    ]
   }
 }

@@ -1,54 +1,88 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
+let timer;
+let num = 0;
 Page({
+
+
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    imgSrcs: [
+      '/icons/shitou.png',
+      '/icons/jiandao.png',
+      '/icons/bu.png'
+    ],
+    imageUserSrc: '/icons/wenhao.png',
+    imageSrc: '',
+    winNum: 0,
+    gamePlay: '',
+    btnState: false
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    let oldWinNum = wx.getStorageSync('winNum');
+    if(oldWinNum != null && oldWinNum!='' ){
+      this.setData({winNum:oldWinNum});
+    }
+    this.timeImg();
+  },
+
+  timeImg() {
+    timer = setInterval(this.move, 300);
+  },
+  move() {
+    if (num >= 3) {
+      num = 0;
+    }
+    num = parseInt(Math.floor(Math.random() * 3));
+    this.setData({
+      imageSrc: this.data.imgSrcs[num]
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+
+  // 改变图片
+  changeImg(e) {
+    if (this.data.btnState) {
+      return;
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+    this.setData({ imageUserSrc: this.data.imgSrcs[e.currentTarget.id] });
+    clearInterval(timer);
+
+    let user = this.data.imageUserSrc;
+    let ai = this.data.imageSrc;
+    let akNum = this.data.winNum;
+    let srcTip = '你输了';
+
+    if ((user == "/icons/shitou.png" && ai == '/icons/jiandao.png') || (user == "/icons/jiandao.png" && ai == '/icons/bu.png') || (user == "/icons/bu.png" && ai == '/icons/shitou.png')) {
+      akNum++;
+      srcTip = '你赢了';
+      wx.setStorageSync('winNum', akNum);
+    }
+    if (user == ai) {
+      srcTip = '平局';
+    }
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      winNum: akNum,
+      gamePlay: srcTip,
+      btnState: true
+    })
+  },
+
+  // 重来
+  again() {
+    if (!this.data.btnState) {
+      return;
+    }
+    this.timeImg();
+    this.setData({
+      btnState: false,
+      gamePlay: '',
+      imageUserSrc: '/icons/wenhao.png',
     })
   }
+
 })

@@ -1,21 +1,73 @@
 /**index.wxss**/
-.userinfo {
+
+.downView{
+  width: 100%;
+  height: 1250rpx;
+  background: #fae738;
+  margin: 0;
+  text-align: center;
+}
+
+.winNum{
+  padding-top: 40rpx;
+  display: block;
+  font-size: 30rpx;
+  color: #363527;
+  font-weight: 5000;
+}
+/* 展示出拳结果 */
+.showView{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  height: 200rpx;
+  margin-top: 30rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.getImg{
+  width: 180rpx;
+  height: 180rpx;
+  margin-left: 80rpx;
+}
+.getImgRight{
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 80rpx;
+}
+.winLost{
+  color: orangered;
+  flex: 1;
+  font-size: 30rpx;
+  margin-top: 75rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+
+/* 下面 */
+.chooseView{
+  height: 800rpx;
+  margin:40rpx;
+  background: #fae798;
+  text-align: center;
+}
+.choice{
+  display: flex;
+  margin-top: 40rpx;
+}
+.choosemak{
+  width: 200rpx;
+  height: 200rpx;
+  flex: 1;
+  content:none!important;
+  /* border: 1px solid #fff; */
+}
+.chooseImg{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+
+/* 按钮 */
+.againBtn{
+  margin: 80rpx;
+  background:#fae738;
 }
