@@ -1,2 +1,44 @@
 <!--pages/movie/movie.wxml-->
-<text>pages/movie/movie.wxml</text>
+<!-- 水印 -->
+<view class='water_top'>
+  <canvas canvas-id='myCanvas1' style='width:100%;height:280rpx;'>
+    <text>我是女生,漂亮的女生</text>
+  </canvas>
+</view>
+<view style='margin-top:160px;'  class='section'>
+  进度条
+  <progress percent="80" active />
+  <text>多选框</text>
+  <checkbox-group bindchange="checkBox">
+    <label wx:for='{{checks}}' wx:for-item="item" wx:for-index="idx" wx:key="unique" style='display:block;'>
+      <checkbox value='{{item.name}}' checked='{{item.checked}}'></checkbox>
+      {{item.value}}
+    </label>
+    <view>选中的值为:{{checkAd}}</view>
+  </checkbox-group>
+</view>
+
+<view class='section'>
+  <view>日期选择器</view>
+  <picker mode="date" value='{{date}}' start="2001-01-01" end="2019-01-01" bindchange='dateChange'>
+    <view class='picker'>当前的选择是:{{date}}</view>
+  </picker>
+</view>
+
+<view class='section'>
+  <view>时间选择器</view>
+  <picker mode="time" value='{{time}}' start="00:01" end="21:00" bindchange='timeChange'>
+    <view class='picker'>当前的选择是:{{time}}</view>
+  </picker>
+</view>
+
+<!-- 照相机 -->
+<camera
+  device-position="back"
+  flash="off"
+  binderror="error"
+  style="width: 100%; height: 300px;"
+></camera>
+<button type="primary" bindtap="takePhoto">拍照</button>
+<view>预览</view>
+<image mode="widthFix" src="{{src}}"></image>

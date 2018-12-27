@@ -32,7 +32,7 @@ Page({
   },
 
   timeImg() {
-    timer = setInterval(this.move, 300);
+    timer = setInterval(this.move, 100);
   },
   move() {
     if (num >= 3) {

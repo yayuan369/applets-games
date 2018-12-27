@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/search/search",
     "pages/index/index",
     "pages/logs/logs",
     "pages/movie/movie"
@@ -29,7 +30,7 @@
         "selectedIconPath": "/icons/tabbar/selected/movieAct.png"
       },
       {
-        "pagePath": "pages/movie/movie",
+        "pagePath": "pages/search/search",
         "text": "查询",
         "iconPath": "/icons/tabbar/normal/cx.png",
         "selectedIconPath": "/icons/tabbar/selected/cxAct.png"

@@ -1,0 +1,9 @@
+<!--pages/search/search.wxml-->
+<view class='mainBox'>
+  <view class='items'>
+    <view class='itemDesc' wx:for='{{list}}' wx:for-item="item" wx:for-index="index" wx:key="unique">
+      <view bindtouchstart='touchS' bindtouchmove='touchM' bindtouchend='touchE' data-index="{{index}}" style="{{item.txtStyle}}" class='inner txt'>{{item.text}}</view>
+      <view data-index="{{index}}" bindtap='delete' class='inner del' style='{{item.mStyle}}'>删除</view>
+    </view>
+  </view>
+</view>

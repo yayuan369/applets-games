@@ -1,0 +1,40 @@
+/* pages/search/search.wxss */
+
+.mainBox{
+width:700rpx;
+margin: 0 auto;
+padding: 40rpx 0;
+}
+.mainBox .items{
+  width: 100%;
+}
+
+.items .itemDesc{
+  position: relative;
+  height: 45px;
+  line-height: 40px;
+  overflow: hidden;
+  border-bottom: 2px solid #ccc;
+}
+.items .itemDesc .inner{
+  position: absolute;
+  top:0;
+}
+.items .itemDesc .txt{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 5;
+  background-color: #fff;
+  padding: 0 10rpx; 
+}
+.items .itemDesc .del{
+  z-index: 4;
+  width: 180rpx;
+  text-align: center;
+  right: 0px;
+  background-color: red;
+  color: #fff;
+  
+}
