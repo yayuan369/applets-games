@@ -49,9 +49,9 @@ Page({
     wx.getSetting({
       success: function(res) {
         if (res.authSetting['scope.userInfo']) {
-          wx.reLaunch({
-            url: '../main/main',
-          })
+          // wx.reLaunch({
+          //   url: '../main/main',
+          // })
           that.setData({
             userInfoShow: false
           })

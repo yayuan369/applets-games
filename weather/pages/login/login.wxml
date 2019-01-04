@@ -1,6 +1,7 @@
 <!--pages/login/login.wxml-->
 
 <view>
+<!-- 弹窗授权 -->
   <van-popup show="{{ userInfoShow }}" custom-style="border-radius:8px; height:300px">
     <view class='authorizationTitle'>微信授权</view>
     <view class='line'></view>
@@ -10,4 +11,6 @@
     <view class='authorizationText2'>获得你的公开信息(昵称、头像等)</view>
     <button class='btn' open-type="getUserInfo" hover-class='none' bindgetuserinfo="getUserInfoFun">授权登录</button>
   </van-popup>
+  
+  <view>哈哈哈,我在呢</view>
 </view>

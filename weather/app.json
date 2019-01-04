@@ -3,7 +3,6 @@
     "pages/login/login",
     "pages/main/main",
     "pages/index/index",
-    "pages/logs/logs",
     "pages/movie/movie",
     "pages/search/search"
   ],
