@@ -63,7 +63,7 @@ Page({
     // console.log('123',e)
     if(e.touches.length == 1){
       var moveX = e.touches[0].clientX;
-      var disX = this.data.startX - moveX;  //起始位置与异动期间的差值
+      var disX = this.data.startX - moveX;  //起始位置与移动期间的差值
       var delBtn = this.data.delWidth;
       var textStyle = '';
       if(disX <= 0){
@@ -114,9 +114,9 @@ Page({
     //获取列表中要删除项的下标
     var index = e.currentTarget.dataset.index;
     var listD = this.data.list;
-    //移除列表中下标为index的项
     listD.splice(index, 1);
-    //更新列表的状态
+
+    //更新列表的
     this.setData({
       list: listD
     });

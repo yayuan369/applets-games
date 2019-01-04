@@ -1,24 +1,26 @@
 {
   "pages": [
-    "pages/search/search",
+    "pages/login/login",
+    "pages/main/main",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/movie/movie"
+    "pages/movie/movie",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "color":"#333",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "各类游戏",
+    "navigationBarTitleText": "想你想不到",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color":"#888",
-    "selectedColor":"#09bb07",
-    "backgroundColor": "#000000",
+    "color":"#000",
+    "selectedColor":"#473C8B",
+    "backgroundColor": "#FFFAF0",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/main/main",
         "text": "主页",
         "iconPath": "/icons/tabbar/normal/yy.png",
         "selectedIconPath": "/icons/tabbar/selected/yyAct.png"
@@ -37,4 +39,5 @@
       }
     ]
   }
+ 
 }

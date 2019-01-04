@@ -1,0 +1,10 @@
+<!--pages/main/main.wxml-->
+<view>
+  <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler">微信登录</button>
+</view>
+<view>
+  <image style='width:130px;height:130px;' src="{{userMes.avatarUrl}}"></image>
+  <text>昵称:{{userMes.nickName}}</text>
+</view>
+
+

@@ -1,0 +1,8 @@
+/* pages/main/main.wxss */
+
+.loginBtn {
+  position: relative;
+  left: 0;
+  z-index: 99999;
+  background: #fff;
+}
